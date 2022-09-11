@@ -36,32 +36,31 @@ function onInputText() {
 }
 
 function createItemName(arr) {
-  const itemName = arr
-    .map(({ name, flags }) => {
-      return `
+  return arr
+    .map(
+      ({ name, flags }) => `
           <li class="country-list__item">
               <img class="country-list__flag" src="${flags.svg}" alt="Flag of ${name.official}" width = 30px height = 30px>
               <h2 class="country-list__name">${name.official}</h2>
-          </li>`;
-    })
+          </li>`
+    )
     .join('');
-  return itemName;
 }
 
 function createItemInfo(arr) {
-  const info = arr
-    .map(({ capital, population, languages }) => {
-      return `
+  // 			` <li class="country-info__item"><p><b>${}: </b>${}</p></li>`;
+  return arr
+    .map(
+      ({ capital, population, languages }) => `
         <ul class="country-info__list">
             <li class="country-info__item"><p><b>Capital: </b>${capital}</p></li>
             <li class="country-info__item"><p><b>Population: </b>${population}</p></li>
             <li class="country-info__item"><p><b>Languages: </b>${Object.values(
               languages
             ).join(', ')}</p></li>
-        </ul>`;
-    })
+        </ul>`
+    )
     .join('');
-  return info;
 }
 
 function alertWrongName() {
