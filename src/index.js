@@ -48,7 +48,6 @@ function createItemName(arr) {
 }
 
 function createItemInfo(arr) {
-  // 			` <li class="country-info__item"><p><b>${}: </b>${}</p></li>`;
   return arr
     .map(
       ({ capital, population, languages }) => `
